@@ -3,13 +3,25 @@
 :root {
   --font-logo: 'Ubuntu', sans-serif;
   --font-primary: 'Roboto', sans-serif;
-  --clr-primary: #1A63F1;
+  --clr-primary: #2060df;
+  --clr-primary-hover: #1246ac;
+  --clr-weather-primary: #0B131E;
+  --clr-weather-primary-hover: #050a0f;
+  --clr-weather-secondary: #202B3B;
+  --clr-weather-secondary-hover: #171f2a;
+  --b-rad-weather: 1.2rem;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px dashed #aaa;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #000;
 }
 
 body,
@@ -44,6 +56,7 @@ ol[class] {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
+
 a {
   text-decoration: none;
 }

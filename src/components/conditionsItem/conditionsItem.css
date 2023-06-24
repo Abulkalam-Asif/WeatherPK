@@ -1,0 +1,23 @@
+.condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.condition-icon_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.condition-icon {
+  font-size: 1.5rem;
+}
+
+.condition-field {
+  font-size: 1.2rem;
+}
+
+.condition-data {
+  font-size: 2.2rem;
+}

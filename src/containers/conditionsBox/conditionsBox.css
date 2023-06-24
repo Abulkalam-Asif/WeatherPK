@@ -1,0 +1,18 @@
+.conditions_box {
+  background-color: var(--clr-weather-secondary);
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: var(--b-rad-weather);
+}
+
+.conditions_box-heading {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.conditions_box-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 1rem 3rem;
+}
