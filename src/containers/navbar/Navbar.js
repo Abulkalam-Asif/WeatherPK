@@ -1,7 +1,7 @@
+import "./navbar.css"
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
-import "./navbar.css"
-import { Navitem } from "../../components"
+import { NavItem } from "../../components"
 import { faSmog, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
@@ -11,8 +11,8 @@ const Navbar = () => {
   return (
     <>
       <div className="nav_links">
-        <Navitem link="/weather" active={location.pathname === "/weather" ? "active" : ""} icon={faSmog} itemText="Weather" />
-        <Navitem link="/" active={location.pathname === "/" ? "active" : ""} icon={faHome} itemText="Home" />
+        <NavItem link="/weather" active={location.pathname === "/weather" ? "active" : ""} icon={faSmog} itemText="Weather" />
+        <NavItem link="/" active={location.pathname === "/" ? "active" : ""} icon={faHome} itemText="Home" />
       </div>
     </>
   )

@@ -1,0 +1,30 @@
+.hourly_forecast_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hourly_forecast_item-time {
+  white-space: nowrap;
+}
+
+.hourly_forecast_item-temp {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  .hourly_forecast_item-time {
+    font-size: .9rem;
+  }
+
+  .hourly_forecast_item-temp {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hourly_forecast_item-temp {
+    font-size: 1.1rem;
+  }
+}

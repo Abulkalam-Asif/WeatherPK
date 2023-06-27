@@ -1,5 +1,5 @@
 .nav_links {
-  background: var(--clr-weather-secondary);
+  background: var(--clr-secondary);
   position: fixed;
   width: 8%;
   top: 1rem;
@@ -11,4 +11,30 @@
   flex-direction: column;
   gap: 1rem;
   font-family: var(--font-primary);
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .nav_links {
+    position: static;
+    flex-direction: row;
+    width: calc(60% - 1rem);
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .nav_links {
+    width: calc(100% - 5rem);
+    margin: 2rem 3rem 1rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 576px) {
+  .nav_links {
+    width: calc(100% - 3rem);
+    margin: 1rem 2rem 1rem 1rem;
+  }
 }

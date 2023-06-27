@@ -1,0 +1,124 @@
+.forecast_box {
+  background-color: var(--clr-secondary);
+  border-radius: var(--b-rad-weather);
+}
+
+.forecast_box-row {
+  position: static;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.forecast_box-column {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 1rem 1rem 4rem 1rem;
+  width: calc(30% - 2rem);
+  overflow-y: hidden;
+}
+
+.forecast_box-heading {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.forecast_box-items {
+  display: flex;
+}
+
+.forecast_box-items-row {
+  flex-direction: row;
+  overflow: scroll hidden;
+  padding: 0 1rem;
+  box-shadow: inset 10px 0px 8px -10px var(--clr-primary), inset -10px 0px 8px -10px var(--clr-primary);
+}
+
+.forecast_box-items-column {
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden scroll;
+  margin-top: 1rem;
+  box-shadow: inset 0px 10px 8px -10px var(--clr-primary), inset 0px -10px 8px -10px var(--clr-primary);
+}
+
+.forecast_box-items-row>div {
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.forecast_box-items-column>div {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.forecast_box-items>div::after {
+  content: "";
+  background: var(--clr-tertiary);
+  position: absolute;
+}
+
+.forecast_box-items>div:last-child:after {
+  content: none;
+}
+
+.forecast_box-items-row>div::after {
+  width: 2px;
+  height: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.forecast_box-items-column>div::after {
+  width: 70%;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 1400px) {
+  .forecast_box-column {
+    width: calc(35% - 2rem);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .forecast_box-column {
+    width: calc(40% - 2rem);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .forecast_box-column {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .forecast_box-items-column {
+    overflow: auto;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .forecast_box-heading {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .forecast_box-heading {
+    font-size: .8rem;
+  }
+
+  .forecast_box-items-row>div {
+    padding: .5rem 1rem;
+  }
+  .forecast_box-items-column>div {
+    padding: 1rem 0;
+  }
+}

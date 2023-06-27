@@ -10,13 +10,22 @@
 }
 
 .nav_item.active {
-  background: var(--clr-weather-primary);
+  background: var(--clr-primary);
 }
 
-.nav_item:hover {
-  background: var(--clr-weather-primary);
+.nav_item:hover, .nav_item:focus {
+  background: var(--clr-primary);
 }
 
 .nav_item-icon {
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .nav_item-icon {
+    font-size: 1.5rem;
+  }
+  .nav_item-text {
+    font-size: .8rem;
+  }
 }

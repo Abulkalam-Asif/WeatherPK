@@ -3,12 +3,16 @@
 :root {
   --font-logo: 'Ubuntu', sans-serif;
   --font-primary: 'Roboto', sans-serif;
-  --clr-primary: #2060df;
-  --clr-primary-hover: #1246ac;
-  --clr-weather-primary: #0B131E;
-  --clr-weather-primary-hover: #050a0f;
-  --clr-weather-secondary: #202B3B;
-  --clr-weather-secondary-hover: #171f2a;
+
+  --clr-primary: #082032;
+  --clr-primary-hover: #030c14;
+  --clr-secondary: #2C394B;
+  --clr-secondary-hover: #253040;
+  --clr-tertiary: #334756;
+  --clr-accent: #ff4d00;
+  --clr-home: #1080d0;
+  --clr-home-hover: #0c63a0;
+
   --b-rad-weather: 1.2rem;
 }
 

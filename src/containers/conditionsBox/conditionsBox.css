@@ -1,6 +1,6 @@
 .conditions_box {
-  background-color: var(--clr-weather-secondary);
-  margin-top: 2rem;
+  background-color: var(--clr-secondary);
+  margin-top: 1rem;
   padding: 1rem;
   border-radius: var(--b-rad-weather);
 }
@@ -15,4 +15,19 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 1rem 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .conditions_box-heading {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .conditions_box-heading {
+    font-size: .8rem;
+  }
+  .conditions_box-items {
+    display: grid;
+    padding: 1rem 0;
+  }
 }

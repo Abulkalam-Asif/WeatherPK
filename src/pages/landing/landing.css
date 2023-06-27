@@ -74,12 +74,12 @@
   border: none;
   border-radius: 3rem;
   color: #fff;
-  background-color: var(--clr-primary);
+  background-color: var(--clr-home);
   transition: .3s background-color;
 }
 
 .landing_search_btn:hover {
-  background-color: var(--clr-primary-hover);
+  background-color: var(--clr-home-hover);
 }
 
 

@@ -1,0 +1,15 @@
+.alert {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: var(--clr-accent);
+  font-family: var(--font-primary);
+  padding: 1rem 2rem;
+  border-radius: var(--b-rad-weather);
+  border: 3px solid var(--clr-accent);
+  z-index: 1;
+  font-weight: 500;
+}
