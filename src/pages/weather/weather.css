@@ -49,11 +49,14 @@
   background: var(--clr-secondary);
   border: none;
   width: 100%;
-  color: #ddd;
+  color: var(--text-p-high);
 }
 
 .weather_search_btn {
   border: 2px solid var(--clr-accent);
+  color: var(--text-p-high);
+  font-weight: 500;
+  background-color: var(--clr-secondary);
 }
 
 #weather_search_field:hover,
@@ -62,12 +65,7 @@
 }
 
 #weather_search_field::placeholder {
-  color: #ddd;
-}
-
-.weather_search_btn {
-  color: #fff;
-  background-color: var(--clr-secondary);
+  color: var(--text-p-low);
 }
 
 .weather_search_btn:hover,
@@ -111,15 +109,15 @@
 }
 
 .clr_f {
-  color: #fff;
+  color: var(--text-p-high);
 }
 
 .clr_d {
-  color: #ddd;
+  color: var(--text-p-medium);
 }
 
 .clr_a {
-  color: #aaa;
+  color: var(--text-p-low);
 }
 
 @media only screen and (max-width: 1400px) {

@@ -4,16 +4,36 @@
   --font-logo: 'Ubuntu', sans-serif;
   --font-primary: 'Roboto', sans-serif;
 
+  --clr-home: #1080d0;
+  --clr-home-hover: #0c63a0;
+  --clr-accent: #ff4d00;
+  --b-rad-weather: 1.2rem;
+}
+
+.light_theme {
+
+  --clr-primary: #badbf4;
+  --clr-primary-hover: #97bfde;
+  --clr-secondary: #8fceff;
+  --clr-secondary-hover: #4fadf4;
+  --clr-tertiary: #007ddd;
+  --clr-accent: #ff4d00;
+
+  --text-p-high: #000;
+  --text-p-medium: #222;
+  --text-p-low: #444;
+}
+
+.dark_theme {
   --clr-primary: #082032;
   --clr-primary-hover: #030c14;
   --clr-secondary: #2C394B;
   --clr-secondary-hover: #253040;
-  --clr-tertiary: #334756;
-  --clr-accent: #ff4d00;
-  --clr-home: #1080d0;
-  --clr-home-hover: #0c63a0;
+  --clr-tertiary: #455664;
 
-  --b-rad-weather: 1.2rem;
+  --text-p-high: #fff;
+  --text-p-medium: #ddd;
+  --text-p-low: #aaa;
 }
 
 *,

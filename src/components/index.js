@@ -4,3 +4,4 @@ export { default as HourlyForecastItem } from "./hourlyForecastItem/HourlyForeca
 export { default as DailyForecastItem } from "./dailyForecastItem/DailyForecastItem";
 export { default as Alert } from "./alert/Alert";
 export { default as Loader } from "./loader/Loader";
+export { default as Switch } from "./switch/Switch";

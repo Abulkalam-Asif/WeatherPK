@@ -15,10 +15,11 @@ const Landing = () => {
       setShowLoader(false);
       isComponentMounted.current = false;
     }
+    // eslint-disable-next-line
   }, []);
 
-  const handleData = async () => {
-    const fetchedData = await getCityWeatherData();
+  const handleData = async (city_name = cityName) => {
+    const fetchedData = await getCityWeatherData(city_name);
     if (fetchedData.error) {
       setShowLoader(false);
       setShowAlert(true);
@@ -29,7 +30,7 @@ const Landing = () => {
       setAlertMsg(alertContent);
       setCityName("");
     } else {
-      localStorage.setItem("cityName", cityName);
+      localStorage.setItem("cityName", city_name);
       setData(fetchedData);
       navigate("/weather");
     }

@@ -15,8 +15,8 @@ const Weather = () => {
     setCityName(e.target.value);
   };
 
-  const handleData = async () => {
-    const fetchedData = await getCityWeatherData();
+  const handleData = async (city_name = cityName) => {
+    const fetchedData = await getCityWeatherData(city_name);
     if (fetchedData.error) {
       setShowLoader(false);
       setShowAlert(true);
@@ -27,19 +27,18 @@ const Weather = () => {
       setAlertMsg(alertContent);
       setCityName("");
     } else {
-      localStorage.setItem("cityName", cityName);
+      localStorage.setItem("cityName", city_name);
       setData(fetchedData);
       setShowLoader(false);
     }
   };
 
   useEffect(() => {
+    const localStorageData = localStorage.getItem("cityName");
     if (!data) {
-      if (localStorage.getItem("cityName")) {
-        setCityName(localStorage.getItem("cityName"));
-        if (cityName !== "") {
-          handleData();
-        }
+      if (localStorageData) {
+        setCityName(localStorageData);
+        handleData(localStorageData);
       } else {
         navigate("/");
         setShowLoader(false);
@@ -50,11 +49,12 @@ const Weather = () => {
     } else {
       setShowLoader(false);
     }
-  });
+    // eslint-disable-next-line
+  }, []);
 
-  const searchHandler = () => {
-    setShowLoader(true);
-    handleData();
+  const searchHandler = async () => {
+    await setShowLoader(true);
+    await handleData(cityName);
   };
 
   const [currentConditionsData, setCurrentConditionsData] = useState(null)
@@ -118,7 +118,6 @@ const Weather = () => {
         }}
       />
     ));
-
     setHourlyForecastData(hourlyForecastItems);
     const daillyForecastItems = data?.forecast?.forecastday.map((item, index) => (
       <DailyForecastItem key={index} data={{ day: getDay(item.date_epoch), date: getDate(item.date_epoch), maxTemp: `${item.day.maxtemp_c}\u00B0C`, minTemp: `${item.day.mintemp_c}\u00B0C`, rainChance: `${item.day.daily_chance_of_rain}%`, snowChance: `${item.day.daily_chance_of_snow}%` }} />
@@ -179,4 +178,4 @@ const Weather = () => {
   )
 }
 
-export default Weather
+export default Weather;

@@ -1,11 +1,9 @@
 import React, { useContext } from 'react'
-import { Landing, Weather } from "./pages";
+import { Landing, Weather, Settings } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import WeatherState from './context/WeatherState';
 import WeatherContext from './context/WeatherContext';
 import { Alert, Loader } from './components';
-
-
 
 const AppContent = () => {
   const { showAlert, showLoader, alertMsg } = useContext(WeatherContext);
@@ -22,6 +20,7 @@ const AppContent = () => {
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/weather" element={<Weather />} />
+          <Route exact path="/settings" element={<Settings />} />
         </Routes>
       </Router>
     </>
