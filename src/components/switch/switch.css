@@ -87,3 +87,26 @@
   background-color: var(--clr-tertiary);
   box-shadow: inset 9px -9px 0px 2px #fff;
 }
+
+@media only screen and (max-width: 768px) {
+  .toggle_switch {
+    width: 60px;
+    height: 30px;
+  }
+
+  .switch_slider::before {
+    top: 3px;
+    left: 6px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .switch_checkbox:checked~.switch_slider::before {
+    transform: translateX(100%);
+  }
+
+  .theme_switch .switch_checkbox:checked~.switch_slider::before {
+    box-shadow: inset 5px -5px 0px 2px #fff;
+  }
+
+}

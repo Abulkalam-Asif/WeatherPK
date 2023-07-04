@@ -1,7 +1,7 @@
 import "./weather.css"
 import React, { useState, useContext, useEffect } from "react"
 import WeatherContext from "../../context/WeatherContext";
-import { ConditionsBox, ForecastBox, Navbar } from "../../containers"
+import { ConditionsBox, Footer, ForecastBox, Navbar } from "../../containers"
 import { HourlyForecastItem, DailyForecastItem } from "../../components";
 import { faTemperatureHalf, faWind, faDroplet, faCloud, faTemperatureHigh, faTemperatureLow, faCloudRain, faSnowflake } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
@@ -186,6 +186,7 @@ const Weather = () => {
           <ForecastBox direction="row" heading="Hourly Forecast" dataItems={hourlyForecastData} />
           <ConditionsBox heading="Today's Summary" dataItems={todaysSummaryData} />
           <ForecastBox direction="column" heading="Daily Forecast" dataItems={dailyForecastData} />
+          <Footer margin_top="1rem"/>
         </div>
       </div>
     </>

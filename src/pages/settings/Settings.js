@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import "./settings.css";
-import { Navbar } from '../../containers';
+import { Footer, Navbar } from '../../containers';
 import { Switch } from '../../components';
 import WeatherContext from '../../context/WeatherContext';
 
@@ -37,7 +37,7 @@ const Settings = () => {
   return (
     <>
       <div className="settings_bg">
-        <Navbar />
+        <Navbar page="settings" />
         <div className="settings_main">
           <h1 className="settings_heading clr_p_high">Settings</h1>
           <div className="settings_options">
@@ -63,6 +63,7 @@ const Settings = () => {
               < Switch click={toggleWindSpeed} check_condition={units?.wind_speed === "mph"} />
             </div>
           </div>
+          <Footer margin_top="auto" page="settings" />
         </div>
       </div>
     </>

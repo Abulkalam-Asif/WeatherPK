@@ -1,4 +1,4 @@
-.nav_links {
+.navbar {
   background: var(--clr-secondary);
   position: fixed;
   width: 8%;
@@ -15,25 +15,29 @@
 
 
 @media only screen and (max-width: 1200px) {
-  .nav_links {
+  .navbar {
     position: static;
     flex-direction: row;
     width: calc(60% - 1rem);
     margin: 1rem;
   }
+
+  /* Two classes used to increase specificity and to overwrite the .navbar classes given below */
+  .settings_navbar.navbar {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-  .nav_links {
+  .navbar {
     width: calc(100% - 4rem);
     margin: 2rem 2rem 1rem 2rem;
   }
 }
 
-@media only screen and (max-width: 768px) {}
-
 @media only screen and (max-width: 576px) {
-  .nav_links {
+  .navbar {
     width: calc(100% - 2rem);
     margin: 1rem;
   }
