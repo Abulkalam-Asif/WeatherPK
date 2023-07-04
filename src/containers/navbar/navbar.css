@@ -25,8 +25,8 @@
 
 @media only screen and (max-width: 992px) {
   .nav_links {
-    width: calc(100% - 5rem);
-    margin: 2rem 3rem 1rem 2rem;
+    width: calc(100% - 4rem);
+    margin: 2rem 2rem 1rem 2rem;
   }
 }
 
@@ -34,7 +34,7 @@
 
 @media only screen and (max-width: 576px) {
   .nav_links {
-    width: calc(100% - 3rem);
-    margin: 1rem 2rem 1rem 1rem;
+    width: calc(100% - 2rem);
+    margin: 1rem;
   }
 }

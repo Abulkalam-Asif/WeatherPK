@@ -7,7 +7,7 @@ const ConditionsBox = (props) => {
   return (
     <>
       <div className="conditions_box">
-        <h4 className="conditions_box-heading clr_d">{heading}</h4>
+        <h4 className="conditions_box-heading clr_p_medium">{heading}</h4>
         <div className="conditions_box-items">
           {
             dataItems?.map((item, index) => (

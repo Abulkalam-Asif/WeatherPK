@@ -9,25 +9,25 @@ const DailyForecastItem = (props) => {
     <>
       <div className="daily_forecast_item">
         <div className="daily_forecast_item-day_date">
-          <span className="daily_forecast_item-day clr_a">{data.day}</span>
-          <span className="daily_forecast_item-date clr_d">{data.date}</span>
+          <span className="daily_forecast_item-day clr_p_low">{data.day}</span>
+          <span className="daily_forecast_item-date clr_p_medium">{data.date}</span>
         </div>
         <div className="daily_forecast_item-values_div">
           <div>
-            <FontAwesomeIcon className="daily_forecast_item-icon clr_a" icon={faTemperatureHigh} />
-            <span className="daily_forecast_item-value clr_f">{data.maxTemp}</span>
+            <FontAwesomeIcon className="daily_forecast_item-icon clr_p_low" icon={faTemperatureHigh} />
+            <span className="daily_forecast_item-value clr_p_high">{data.maxTemp}</span>
           </div>
           <div>
-            <FontAwesomeIcon className="daily_forecast_item-icon clr_a" icon={faCloudRain} />
-            <span className="daily_forecast_item-value clr_f">{data.rainChance}</span>
+            <FontAwesomeIcon className="daily_forecast_item-icon clr_p_low" icon={faCloudRain} />
+            <span className="daily_forecast_item-value clr_p_high">{data.rainChance}</span>
           </div>
           <div>
-            <FontAwesomeIcon className="daily_forecast_item-icon clr_a" icon={faTemperatureLow} />
-            <span className="daily_forecast_item-value clr_f">{data.minTemp}</span>
+            <FontAwesomeIcon className="daily_forecast_item-icon clr_p_low" icon={faTemperatureLow} />
+            <span className="daily_forecast_item-value clr_p_high">{data.minTemp}</span>
           </div>
           <div>
-            <FontAwesomeIcon className="daily_forecast_item-icon clr_a" icon={faSnowflake} />
-            <span className="daily_forecast_item-value clr_f">{data.snowChance}</span>
+            <FontAwesomeIcon className="daily_forecast_item-icon clr_p_low" icon={faSnowflake} />
+            <span className="daily_forecast_item-value clr_p_high">{data.snowChance}</span>
           </div>
         </div>
       </div>

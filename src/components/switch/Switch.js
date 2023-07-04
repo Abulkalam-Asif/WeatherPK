@@ -4,14 +4,18 @@ import "./switch.css";
 const Switch = (props) => {
   return (
     <>
-      <div className="toggle_switch">
+      <div className={`toggle_switch ${props.type}`}>
         <label className="switch_lable">
-          <input className="switch_checkbox" onClick={props.click} type='checkbox' />
+          <input checked={props.check_condition} className="switch_checkbox" onChange={props.click} type='checkbox' />
           <span className="switch_slider"></span>
         </label>
       </div >
     </>
   )
 }
+
+Switch.defaultProps = {
+  type: "default_switch",
+};
 
 export default Switch

@@ -30,7 +30,7 @@
 
 .forecast_box-items-row {
   flex-direction: row;
-  overflow: scroll hidden;
+  overflow: auto hidden;
   padding: 0 1rem;
   box-shadow: inset 10px 0px 8px -10px var(--clr-primary), inset -10px 0px 8px -10px var(--clr-primary);
 }
@@ -38,7 +38,7 @@
 .forecast_box-items-column {
   height: 100%;
   flex-direction: column;
-  overflow: hidden scroll;
+  overflow: hidden auto;
   margin-top: 1rem;
   box-shadow: inset 0px 10px 8px -10px var(--clr-primary), inset 0px -10px 8px -10px var(--clr-primary);
 }
@@ -118,6 +118,7 @@
   .forecast_box-items-row>div {
     padding: .5rem 1rem;
   }
+
   .forecast_box-items-column>div {
     padding: 1rem 0;
   }

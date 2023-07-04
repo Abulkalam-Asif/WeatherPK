@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Weather = () => {
   const navigate = useNavigate(null);
   const context = useContext(WeatherContext);
-  const { cityName, setCityName, data, setData, setShowAlert, setAlertMsg, getCityWeatherData, setShowLoader } = context;
+  const { cityName, setCityName, data, setData, setShowAlert, setAlertMsg, getCityWeatherData, setShowLoader, units } = context;
 
   const searchInputHandler = (e) => {
     setCityName(e.target.value);
@@ -32,8 +32,21 @@ const Weather = () => {
       setShowLoader(false);
     }
   };
+  const windSpeedHandler = (val) => {
+    if (units.wind_speed === "mph") {
+      val = val * 0.62;
+    }
+    return val?.toFixed(1).toString() + (units.wind_speed === "mph" ? " mph" : " kph");
+  }
+  const temperatureHandler = (val) => {
+    if (units.temperature === "F") {
+      val = (val * (9 / 5)) + 32;
+    }
+    return val?.toFixed(1).toString() + (units.temperature === "F" ? "\u00B0F" : "\u00B0C");
+  }
 
   useEffect(() => {
+    setShowLoader(true);
     const localStorageData = localStorage.getItem("cityName");
     if (!data) {
       if (localStorageData) {
@@ -67,12 +80,12 @@ const Weather = () => {
       {
         field: "Feels like",
         icon: faTemperatureHalf,
-        value: `${data?.current?.feelslike_c}\u00B0C `,
+        value: `${temperatureHandler(data?.current?.feelslike_c)} `,
       },
       {
         field: "Wind",
         icon: faWind,
-        value: `${data?.current?.wind_kph} km/h`
+        value: `${windSpeedHandler(data?.current?.wind_kph)}`
       },
       {
         field: "Humidity",
@@ -89,12 +102,12 @@ const Weather = () => {
       {
         field: "Max Temperature",
         icon: faTemperatureHigh,
-        value: `${data?.forecast?.forecastday[0]?.day.maxtemp_c}\u00B0C `
+        value: `${temperatureHandler(data?.forecast?.forecastday[0]?.day.maxtemp_c)} `
       },
       {
         field: "Min Temperature",
         icon: faTemperatureLow,
-        value: `${data?.forecast?.forecastday[0]?.day.mintemp_c}\u00B0C `
+        value: `${temperatureHandler(data?.forecast?.forecastday[0]?.day.mintemp_c)} `
       },
       {
         field: "Chances of Rain",
@@ -114,16 +127,17 @@ const Weather = () => {
           time: getTime(item.time_epoch),
           icon: item.condition.icon,
           text: item.condition.text,
-          temperature: `${item.temp_c}\u00B0C`,
+          temperature: `${temperatureHandler(item.temp_c)}`,
         }}
       />
     ));
     setHourlyForecastData(hourlyForecastItems);
     const daillyForecastItems = data?.forecast?.forecastday.map((item, index) => (
-      <DailyForecastItem key={index} data={{ day: getDay(item.date_epoch), date: getDate(item.date_epoch), maxTemp: `${item.day.maxtemp_c}\u00B0C`, minTemp: `${item.day.mintemp_c}\u00B0C`, rainChance: `${item.day.daily_chance_of_rain}%`, snowChance: `${item.day.daily_chance_of_snow}%` }} />
+      <DailyForecastItem key={index} data={{ day: getDay(item.date_epoch), date: getDate(item.date_epoch), maxTemp: `${temperatureHandler(item.day.maxtemp_c)}`, minTemp: `${temperatureHandler(item.day.mintemp_c)}`, rainChance: `${item.day.daily_chance_of_rain}%`, snowChance: `${item.day.daily_chance_of_snow}%` }} />
     ));
 
     setDailyForecastData(daillyForecastItems);
+    // eslint-disable-next-line
   }, [data])
 
 
@@ -157,15 +171,15 @@ const Weather = () => {
           </div>
           <div className="weather_main">
             <div className="weather_main-left">
-              <h1 className="weather_main-city clr_f">{data?.location?.name}</h1>
-              <h2 className="weather_main-region_country clr_d">{data?.location?.region} - {data?.location?.country}</h2>
-              <div className="weather_main-date_day clr_a">{getDay(data?.location?.localtime_epoch)} - {getDate(data?.location?.localtime_epoch)}</div>
-              <h1 className="weather_main-temp clr_f">{data?.current?.temp_c}&deg;C</h1>
-              <h3 className="weather_main-condition clr_d">{data?.current?.condition.text}</h3>
+              <h1 className="weather_main-city clr_p_high">{data?.location?.name}</h1>
+              <h2 className="weather_main-region_country clr_p_medium">{data?.location?.region} - {data?.location?.country}</h2>
+              <div className="weather_main-date_day clr_p_low">{getDay(data?.location?.localtime_epoch)} - {getDate(data?.location?.localtime_epoch)}</div>
+              <h1 className="weather_main-temp clr_p_high">{temperatureHandler(data?.current?.temp_c)}</h1>
+              <h3 className="weather_main-condition clr_p_medium">{data?.current?.condition.text}</h3>
             </div>
             <div className="weather_main-right">
               <img className="weather_main-icon" src={data?.current?.condition.icon} alt={data?.current?.condition.text} />
-              <div className="clr_d">Updated on&nbsp;&nbsp;<span className="weather_main-time">{getTime(data?.current?.last_updated_epoch)}</span></div>
+              <div className="clr_p_medium">Updated on&nbsp;&nbsp;<span className="weather_main-time">{getTime(data?.current?.last_updated_epoch)}</span></div>
             </div>
           </div>
           <ConditionsBox heading="Current Weather Conditions" dataItems={currentConditionsData} />

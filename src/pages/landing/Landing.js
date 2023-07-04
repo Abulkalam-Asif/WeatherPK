@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect } from 'react'
 import "./landing.css"
 import WeatherContext from "../../context/WeatherContext";
 import landing_bg from "../../assets/landing_bg.mp4"
@@ -9,12 +9,8 @@ const Landing = () => {
   const { cityName, setCityName, setData, setAlertMsg, setShowAlert, getCityWeatherData, setShowLoader } = context;
   const navigate = useNavigate(null);
 
-  const isComponentMounted = useRef(true);
   useEffect(() => {
-    if (isComponentMounted.current) {
-      setShowLoader(false);
-      isComponentMounted.current = false;
-    }
+    setShowLoader(false);
     // eslint-disable-next-line
   }, []);
 
