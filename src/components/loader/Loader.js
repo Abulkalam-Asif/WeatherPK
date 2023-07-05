@@ -6,8 +6,8 @@ const Loader = () => {
   return (
     <>
       <div className="loader_bg">
-        <Puff
-          color="#fff"
+        < Puff
+          color="#ff4d00"
           wrapperClass="loader"
           ariaLabel="puff-loading"
         />

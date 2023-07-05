@@ -21,6 +21,10 @@
   gap: .5rem;
   text-align: center;
 }
+.footer_my_name {
+  white-space: nowrap;
+  font-weight: 500;
+}
 
 .footer_api_attribute {
   display: flex;

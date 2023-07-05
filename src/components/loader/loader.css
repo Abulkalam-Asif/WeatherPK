@@ -1,5 +1,5 @@
 .loader_bg {
-  background-color: #000000;
+  background-color: var(--clr-secondary);
   position: fixed;
   top: 0;
   left: 0;
@@ -7,6 +7,7 @@
   bottom: 0;
   z-index: 2;
 }
+
 .loader {
   position: fixed;
   top: 50%;

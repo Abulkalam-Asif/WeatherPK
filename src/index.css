@@ -13,11 +13,10 @@
 .light {
 
   --clr-primary: #8fceff;
-  --clr-secondary-hover: #4fadf4;
-  --clr-secondary: #badbf4;
   --clr-primary-hover: #97bfde;
+  --clr-secondary: #badbf4;
+  --clr-secondary-hover: #4fadf4;
   --clr-tertiary: #249bf6;
-  --clr-accent: #ff4d00;
 
   --text-p-high: #000;
   --text-p-medium: #222;

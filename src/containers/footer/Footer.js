@@ -12,8 +12,8 @@ const Footer = (props) => {
           <p>Copyright&copy; All rights reserved</p>
           <p>Created with&nbsp;
             <FontAwesomeIcon className="footer_icon" icon={faHeart} color="#FF0000" /> and&nbsp;
-            <a href="https://react.dev/" target="_blank" rel="noreferrer" title="React"><FontAwesomeIcon className="footer_icon" color="#7cc5d9" icon={faReact} /></a> by&nbsp;
-            <span className="clr_p_high">Abul Kalam</span>
+            <a href="https://react.dev/" target="_blank" rel="noreferrer" title="React"><FontAwesomeIcon className="footer_icon" color="#2babcf" icon={faReact} /></a> by&nbsp;
+            <span className="clr_p_high footer_my_name">Abul Kalam</span>
           </p>
         </div>
 

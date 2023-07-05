@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .daily_forecast_item-day_date {
@@ -38,16 +38,19 @@
 @media only screen and (max-width: 1400px) {
   .daily_forecast_item-values_div>div {
     font-size: 1.1rem;
-  } 
+  }
 }
+
 @media only screen and (max-width: 576px) {
   .daily_forecast_item-day {
     font-size: 1rem;
   }
+
   .daily_forecast_item-date {
     font-size: .8rem;
   }
+
   .daily_forecast_item-values_div>div {
     font-size: .9rem;
-  } 
+  }
 }

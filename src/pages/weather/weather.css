@@ -2,9 +2,8 @@
   min-height: 100vh;
   background-color: var(--clr-primary);
   font-family: var(--font-primary);
-  overflow: auto;
   /* To prevent margin collapse*/
-  padding-top: 1px;
+  overflow: auto;
 }
 
 .weather_center {
