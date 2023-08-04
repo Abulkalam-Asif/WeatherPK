@@ -1,9 +1,9 @@
 import React from 'react'
-import "./navItem.css"
+import "./navitem.css"
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavItem = (props) => {
+const Navitem = (props) => {
   return (
     <>
       <Link to={props.link} className={`nav_item ${props.active}`}>
@@ -14,4 +14,4 @@ const NavItem = (props) => {
   )
 }
 
-export default NavItem
+export default Navitem
